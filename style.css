@@ -29,6 +29,11 @@ body {
 }
 
 /* navigation */
+.menu-toggle{
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
 
 .nav {
   display: flex;
@@ -47,7 +52,7 @@ body {
 }
 
 .nav li a {
-  display: block;
+  display: inline-block;
   text-decoration: none;
   font-weight: 500;
   color: black;
@@ -464,11 +469,19 @@ cursor: pointer;
 /* responsive */
 
 @media (max-width: 768px) {
+
+  .menu-toggle{
+    display: block;
+  }
   .nav {
-    flex-direction: column;
+     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
   }
 
   .nav ul {
+    display: none;
     width: 100%;
     flex-direction: column;
     margin-top: 20px;
@@ -476,6 +489,9 @@ cursor: pointer;
     align-items: center;
   }
 
+  .nav ul.active{
+    display: flex;
+  }
   .nav li a {
     text-align: center;
   }
